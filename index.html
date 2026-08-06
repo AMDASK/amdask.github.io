@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+
+	<!-- TAB NAME -->
+	<title> FULL NAME </title>
+
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+	</style>
+</head>
+
+<body>
+
+	<div class="content--canvas"></div>
+
+	<div class="main-panel">
+		<div class="panel-content">
+
+			<!-- HEADER -->
+			<div class="header-div">
+				<!-- FULL NAME -->
+				<h1 class="header-name">FULL NAME</h1>
+
+				<!-- NAV BUTTONS -->
+				<div class="nav-buttons-div">
+					<button type="button" class="nav-button active-state" data-page="home">🏠 Home</button>
+					<button type="button" class="nav-button" data-page="about">👤 About Me</button>
+					<button type="button" class="nav-button" data-page="resume">📄 Resume</button>
+				</div>
+			</div>
+
+			<div class="line-break"></div>
+
+			<!-- CONTENT CONTAINER -->
+			<div id="content-container">
+
+				<!-- HOME CONTENT -->
+				<div id="page-home" class="content-page active-page">
+
+					<!-- BRIEF SUMMARY -->
+					<div class="brief-summary-div">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+
+					<div class="line-break"></div>
+
+					<!-- MY WORK -->
+					<h2>My Work</h2>
+
+					<!-- PROJECT 1 -->
+					<div class="project-item" data-gif="Leaves.gif" data-poster="test.png">
+						<div class="content-panel">
+							<!-- LEFT COLUMN - Image/GIF -->
+							<div class="content-column">
+								<img class="project-image" src="test.png" alt="Project 1">
+							</div>
+
+							<!-- RIGHT COLUMN - Description + Button -->
+							<div class="content-column">
+								<div class="content-row">
+									<p>
+										<strong>Project 1</strong><br>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+									</p>
+								</div>
+								<div class="content-row">
+									<button class="panel-button">View Project</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- PROJECT 2 -->
+					<div class="project-item" data-gif="Leaves.gif" data-poster="test.png">
+						<div class="content-panel">
+							<!-- LEFT COLUMN - Image/GIF -->
+							<div class="content-column">
+								<img class="project-image" src="test.png" alt="Project 2">
+							</div>
+
+							<!-- RIGHT COLUMN - Description + Button -->
+							<div class="content-column">
+								<div class="content-row">
+									<p>
+										<strong>Project 2</strong><br>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+									</p>
+								</div>
+								<div class="content-row">
+									<button class="panel-button">View Project</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- PROJECT 3 -->
+					<div class="project-item" data-gif="Leaves.gif" data-poster="test.png">
+						<div class="content-panel">
+							<!-- LEFT COLUMN - Image/GIF -->
+							<div class="content-column">
+								<img class="project-image" src="test.png" alt="Project 3">
+							</div>
+
+							<!-- RIGHT COLUMN - Description + Button -->
+							<div class="content-column">
+								<div class="content-row">
+									<p>
+										<strong>Project 3</strong><br>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+									</p>
+								</div>
+								<div class="content-row">
+									<button class="panel-button">View Project</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ABOUT CONTENT -->
+				<div id="page-about" class="content-page">
+
+					<!-- PAGE TITLE -->
+					<div><h2 class="header-name">About Me</h2></div>
+
+					<!-- ABOUT ME DESCRIPTION -->
+					<div class="brief-summary-div">
+						<p>I'm a passionate developer with experience in...</p>
+					</div>
+
+					<div class="line-break"></div>
+
+					<!-- SKILLS -->
+					<h2>Skills</h2>
+					<div class="content-grid">
+						<div class="skill-item">HTML/CSS</div>
+						<div class="skill-item">JavaScript</div>
+						<div class="skill-item">Python</div>
+					</div>
+				</div>
+
+				<!-- RESUME CONTENT -->
+				<div id="page-resume" class="content-page">
+
+					<!-- PAGE TITLE -->
+					<div><h2 class="header-name">Resume</h2></div>
+
+					<!-- BRIEF SUMMARY -->
+					<div class="brief-summary-div">
+						<p>Here's my professional experience and qualifications. Feel free to download or view the PDF below.</p>
+					</div>
+
+					<div class="line-break"></div>
+
+					<!-- RESUME VIEWER -->
+					<div class="resume-container">
+						<!-- PDF Viewer -->
+						<div class="pdf-viewer">
+							<embed src="https://profile.indeed.com/p/ahmada-bgeascd" type="application/pdf" width="100%" height="600px" />
+						</div>
+
+						<!-- Download Button -->
+						<div class="resume-actions">
+							<a href="resume.pdf" download class="download-button">
+								📄 Download Resume (PDF)
+							</a>
+							<a href="https://profile.indeed.com/p/ahmada-bgeascd" target="_blank" class="view-button">
+								Open in New Tab
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<hr />
+
+	<script>
+// Force the script to wait until the entire page is built
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ===== NAV BUTTONS =====
+  const navButtons = document.querySelectorAll('.nav-button');
+
+  navButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      // Clear all active states
+      navButtons.forEach((btn) => {
+        btn.classList.remove('active-state');
+      });
+
+      // Add active state to clicked button
+      button.classList.add('active-state');
+
+      // Get the page to show
+      const pageId = button.getAttribute('data-page');
+      if (pageId) {
+        // Hide all pages
+        document.querySelectorAll('.content-page').forEach((section) => {
+          section.classList.remove('active-page');
+        });
+
+        // Show the selected page
+        const targetPage = document.getElementById('page-' + pageId);
+        if (targetPage) {
+          targetPage.classList.add('active-page');
+          // Update URL hash
+          window.location.hash = pageId;
+        }
+      }
+    });
+  });
+
+  // ===== PROJECT GIF HOVER =====
+  try {
+    const projectItems = document.querySelectorAll('.project-item');
+    console.log("Found projects:", projectItems.length);
+
+    projectItems.forEach(function(project, index) {
+      const projectImage = project.querySelector('.project-image');
+
+      if (projectImage && projectImage instanceof HTMLImageElement) {
+        const gifSrc = project.getAttribute('data-gif');
+        const posterSrc = project.getAttribute('data-poster');
+
+        if (gifSrc && posterSrc) {
+          projectImage.src = posterSrc;
+
+          project.addEventListener('mouseenter', function() {
+            console.log("▶️ Playing GIF for project " + (index + 1));
+            projectImage.src = gifSrc + '?t=' + Date.now();
+          });
+
+          project.addEventListener('mouseleave', function() {
+            console.log("⏸️ Showing poster for project " + (index + 1));
+            projectImage.src = posterSrc;
+          });
+
+          console.log("✅ GIF hover enabled for project " + (index + 1));
+        }
+      }
+    });
+
+  } catch (error) {
+    console.warn("⚠️ GIF hover feature failed:", error);
+  }
+
+  // ===== URL HASH HANDLER =====
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    // Find the target page
+    const targetPage = document.getElementById('page-' + hash);
+    if (targetPage) {
+      // Hide all pages
+      document.querySelectorAll('.content-page').forEach(p => {
+        p.classList.remove('active-page');
+      });
+
+      // Show target page
+      targetPage.classList.add('active-page');
+
+      // Update nav buttons
+      navButtons.forEach((btn) => {
+        btn.classList.remove('active-state');
+        if (btn.getAttribute('data-page') === hash) {
+          btn.classList.add('active-state');
+        }
+      });
+    }
+  }
+
+	// ===== LISTEN FOR URL HASH CHANGES =====
+	window.addEventListener('hashchange', function () {
+		const hash = window.location.hash.replace('#', '');
+		if (hash) {
+			const targetPage = document.getElementById('page-' + hash);
+			if (targetPage) {
+				// Hide all pages
+				document.querySelectorAll('.content-page').forEach(p => {
+					p.classList.remove('active-page');
+				});
+
+				// Show target page
+				targetPage.classList.add('active-page');
+
+				// Update nav buttons
+				navButtons.forEach((btn) => {
+					btn.classList.remove('active-state');
+					if (btn.getAttribute('data-page') === hash) {
+						btn.classList.add('active-state');
+					}
+				});
+			}
+		}
+	});
+
+});
+	</script>
+
+	<script src="coalesce.js"></script>
+	<script src="util.js"></script>
+	<script src="aurora.js"></script>
+
+</body>
+
+<!--</html>Hello, I am Ahmad. An experienced game developer in the Unity Game Engine. I love playing, discussing and making games (including board games).
+I currently work at VR Vision and have 6 years of experince making VR showcase and training apps and some tools programming.
+I am always eager to improve myself and learn new things, such as html and css to develop this website.-->
