@@ -70,11 +70,16 @@
 						<h2>VRVision Work</h2>
 
 						<!-- PROJECT 1 -->
-						<div class="project-item" data-gif="./Gifs/Coca Cola Gif.gif" data-poster="./Thumbnails/Coca Cola Thumbnail.jpg">
+						<div class="project-item" data-video="./Videos/Coca Cola.mp4" data-poster="./Thumbnails/Coca Cola Thumbnail.jpg">
 							<div class="content-panel">
 								<!-- LEFT COLUMN - Image/GIF -->
 								<div class="content-column">
-									<img class="project-image" src="./Thumbnails/Coca Cola Thumbnail.jpg" alt="Coca-Cola: Bulk Syrup Sanitization">
+
+									<img class="project-image project-poster" src="./Thumbnails/Coca Cola Thumbnail.jpg" alt="Coca-Cola: Bulk Syrup Sanitization">
+
+									<video class="project-image project-video" poster="./Thumbnails/Coca Cola Thumbnail.jpg" muted playsinline loop preload="metadata">
+										<source src="./Videos/Coca Cola.mp4" type="video/mp4" />
+									</video>
 								</div>
 
 								<!-- RIGHT COLUMN - Description + Button -->
@@ -97,11 +102,16 @@
 						</div>
 
 						<!-- PROJECT 2 -->
-						<div class="project-item" data-gif="./Gifs/Toyota Gif.gif" data-poster="./Thumbnails/Toyota Thumbnail.jpg">
+						<div class="project-item" data-video="./Videos/Toyota.mp4" data-poster="./Thumbnails/Toyota Thumbnail.jpg">
 							<div class="content-panel">
 								<!-- LEFT COLUMN - Image/GIF -->
 								<div class="content-column">
-									<img class="project-image" src="./Thumbnails/Toyota Thumbnail.jpg" alt="Toyota: 2THD Component Identification">
+
+									<img class="project-image project-poster" src="./Thumbnails/Toyota Thumbnail.jpg" alt="Toyota: 2THD Component Identification">
+
+									<video class="project-image project-video" poster="./Thumbnails/Toyota Thumbnail.jpg" muted playsinline loop preload="metadata">
+										<source src="./Videos/Toyota.mp4" type="video/mp4" />
+									</video>
 								</div>
 
 								<!-- RIGHT COLUMN - Description + Button -->
@@ -109,10 +119,10 @@
 									<div class="content-row">
 										<p>
 											<strong>Toyota: 2THD Component Identification</strong><br>
-											A multiplayer VR program that trains technicians across North America 
-											to identify parts on electric forklifts using interactive digital twins. 
-											Learners collaborate in real-time with trainers and peers, practicing 
-											component recognition in a scalable, risk-free virtual environment 
+											A multiplayer VR program that trains technicians across North America
+											to identify parts on electric forklifts using interactive digital twins.
+											Learners collaborate in real-time with trainers and peers, practicing
+											component recognition in a scalable, risk-free virtual environment
 											before working on physical equipment.
 										</p>
 									</div>
@@ -750,32 +760,50 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("Found projects:", projectItems.length);
 
     projectItems.forEach(function(project, index) {
-      const projectImage = project.querySelector('.project-image');
+	  const poster = project.querySelector('.project-poster');
+	  const video = project.querySelector('.project-video');
 
-      if (projectImage && projectImage instanceof HTMLImageElement) {
-        const gifSrc = project.getAttribute('data-gif');
+      if (poster instanceof HTMLImageElement && video instanceof HTMLVideoElement) {
+        const videoSrc = project.getAttribute('data-video');
         const posterSrc = project.getAttribute('data-poster');
 
-        if (gifSrc && posterSrc) {
-          projectImage.src = posterSrc;
+        if (videoSrc && posterSrc) {
+			video.preload = 'metadata';
+			video.src = videoSrc;
+			poster.src = posterSrc;
+
+			video.load();
 
           project.addEventListener('mouseenter', function() {
-            console.log("▶️ Playing GIF for project " + (index + 1));
-            projectImage.src = gifSrc + '?t=' + Date.now();
+            console.log("▶️ Playing VIDEO for project " + (index + 1));
+
+			  // Hide poster, show video
+			  poster.style.display = 'none';
+			  video.style.display = 'block';
+
+			  // Play video (loops automatically due to 'loop' attribute)
+			  video.play().catch(function (error) {
+				  console.warn("Autoplay prevented:", error);
+			  });
           });
 
           project.addEventListener('mouseleave', function() {
-            console.log("⏸️ Showing poster for project " + (index + 1));
-            projectImage.src = posterSrc;
+            console.log("⏸️ Showing POSTER for project " + (index + 1));
+			  video.pause();
+			  video.currentTime = 0;
+
+			  // Hide video, show poster
+			  video.style.display = 'none';
+			  poster.style.display = 'block';
           });
 
-          console.log("✅ GIF hover enabled for project " + (index + 1));
+          console.log("✅ Video play enabled for project " + (index + 1));
         }
       }
     });
 
   } catch (error) {
-    console.warn("⚠️ GIF hover feature failed:", error);
+    console.warn("⚠️ Video play feature failed:", error);
   }
 
   // ===== URL HASH HANDLER =====
