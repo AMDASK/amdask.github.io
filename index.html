@@ -761,7 +761,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           project.addEventListener('mouseenter', function() {
             console.log("▶️ Playing GIF for project " + (index + 1));
-            projectImage.src = gifSrc;
+            projectImage.src = gifSrc  + '?t=' + Date.now();
           });
 
           project.addEventListener('mouseleave', function() {
